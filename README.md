@@ -295,7 +295,7 @@ public void MyEmailSenderService {
                                   .to(Lists.newArrayList(new InternetAddress(tyrannicida.getEmail(), tyrannicida.getName())))
                                   .subject("Idus Martii")
                                   .body("Sic semper...")
-                                  .encoding(Charset.forName("UTF-8"))
+                                  .encoding("UTF-8")
                                   .build();
         final OffsetDateTime scheduledDateTime = OffsetDateTime.now().plusDays(1);
         final int priorityLevel = 1;
@@ -324,7 +324,7 @@ public void MyEmailWithTemplateSenderService {
                                   .to(Lists.newArrayList(new InternetAddress(tyrannicida.getEmail(), tyrannicida.getName())))
                                   .subject("Idus Martii")
                                   .body("")//Empty body
-                                  .encoding(Charset.forName("UTF-8"))
+                                  .encoding("UTF-8")
                                   .build();
        //Defining the model object for the given Freemarker template
        final Map<String, Object> modelObject = new HashMap<>();
@@ -334,7 +334,7 @@ public void MyEmailWithTemplateSenderService {
        final InlinePicture inlinePicture = DefaultInlinePicture.builder()
                                .file(imageFile)
                                .imageType(ImageType.JPG)
-                               .templateName("my_image.jpg").build());
+                               .templateName("my_image.jpg").build();
         final OffsetDateTime scheduledDateTime = OffsetDateTime.now().plusDays(1);
         final int priorityLevel = 1;
       
